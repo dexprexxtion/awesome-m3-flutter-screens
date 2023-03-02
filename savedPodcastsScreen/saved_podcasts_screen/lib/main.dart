@@ -4,6 +4,10 @@ void main() {
   runApp(SavedPodcastsApp());
 }
 
+class GlobalContextService {
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+}
+
 class SavedPodcastsApp extends StatelessWidget {
   const SavedPodcastsApp({super.key});
 
@@ -15,14 +19,20 @@ class SavedPodcastsApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
           fontFamily: 'Roboto'),
+      navigatorKey: GlobalContextService.navigatorKey,
       home: SavedPodcastsPage(),
     );
   }
 }
 
-class SavedPodcastsPage extends StatelessWidget {
+class SavedPodcastsPage extends StatefulWidget {
   const SavedPodcastsPage({super.key});
 
+  @override
+  State<SavedPodcastsPage> createState() => _SavedPodcastsPageState();
+}
+
+class _SavedPodcastsPageState extends State<SavedPodcastsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,8 +71,6 @@ class SavedPodcastsPage extends StatelessWidget {
                 _buildCardRow(),
                 _buildCardRow(),
                 _buildCardRow(),
-                _buildCardRow(),
-                _buildCardRow(),
               ],
             ),
           ),
@@ -76,36 +84,100 @@ class SavedPodcastsPage extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 0, bottom: 8),
             child: Card(
-              elevation: 0,
+              color: Theme.of(context).colorScheme.surface,
+              surfaceTintColor: Theme.of(context).colorScheme.surfaceTint,
               shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(12))),
-              child: SizedBox(
-                width: 300,
-                height: 100,
-                child: Center(
-                  child: Text('Outlined Card'),
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
                 ),
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(12.0),
+                    child: Image.network(
+                      'https://picsum.photos/id/25/200',
+                      height: 200,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0, left: 16.0, bottom: 8.0),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Podcast',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24.0,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8.0,
+                          ),
+                          Text('34 episodes',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16.0,
+                              ))
+                        ]),
+                  ),
+                ],
               ),
             ),
           ),
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 0, bottom: 8),
             child: Card(
-              elevation: 0,
               shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(12))),
-              child: SizedBox(
-                width: 300,
-                height: 100,
-                child: Center(
-                  child: Text('Outlined Card'),
+                side: BorderSide(
+                  color: Theme.of(context).colorScheme.outline,
                 ),
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(12.0),
+                    child: Image.network(
+                      'https://picsum.photos/id/106/200',
+                      height: 200,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0, left: 16.0, bottom: 8.0),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Podcast',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24.0,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8.0,
+                          ),
+                          Text('27 episodes',
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16.0,
+                              ))
+                        ]),
+                  ),
+                ],
               ),
             ),
           ),
