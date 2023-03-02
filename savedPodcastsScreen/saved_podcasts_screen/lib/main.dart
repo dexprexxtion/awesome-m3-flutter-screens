@@ -20,7 +20,6 @@ class SavedPodcastsApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
           fontFamily: 'Roboto'),
       navigatorKey: GlobalContextService.navigatorKey,
-      debugShowCheckedModeBanner: false,
       home: SavedPodcastsPage(),
     );
   }
