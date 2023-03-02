@@ -16,6 +16,7 @@ class ArticleScreenApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
       home: ArticleScreenPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
