@@ -20,9 +20,14 @@ class PodcastScreenApp extends StatelessWidget {
   }
 }
 
-class PodcastPage extends StatelessWidget {
+class PodcastPage extends StatefulWidget {
   const PodcastPage({super.key});
 
+  @override
+  State<PodcastPage> createState() => _PodcastPageState();
+}
+
+class _PodcastPageState extends State<PodcastPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +40,6 @@ class PodcastPage extends StatelessWidget {
               onPressed: () {},
             ),
             actions: [
-              IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () {},
-              ),
               IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () {},
@@ -56,7 +57,33 @@ class PodcastPage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   _buildPodcastCard(),
+                  SizedBox(
+                    height: 8.0,
+                  ),
                   _buildPodcastCard(),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  _buildPodcastCard(),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  _buildPodcastCard(),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  _buildPodcastCard(),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  _buildPodcastCard(),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  _buildPodcastCard(),
+                  SizedBox(
+                    height: 8.0,
+                  ),
                 ],
               ),
             ),
@@ -68,7 +95,9 @@ class PodcastPage extends StatelessWidget {
 
   Widget _buildPodcastCard() {
     return Card(
-      elevation: 4.0,
+      elevation: 0.0,
+      color: Theme.of(context).colorScheme.surfaceVariant,
+      surfaceTintColor: Theme.of(context).colorScheme.surfaceTint,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
@@ -81,7 +110,7 @@ class PodcastPage extends StatelessWidget {
               bottomLeft: Radius.circular(12.0),
             ),
             child: Image.network(
-              'https://picsum.photos/id/11/120/120',
+              'https://picsum.photos/id/19/120/120',
               height: 120.0,
               width: 120.0,
               fit: BoxFit.cover,
@@ -92,18 +121,21 @@ class PodcastPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'Lorem Ipsem',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    'Lorem Ipsem',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 8.0,
                 ),
                 Text(
-                  'Subtitle',
+                  'Lorem ipsum dolor sit am...',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.grey[600],
@@ -117,15 +149,9 @@ class PodcastPage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(top: 70.0, right: 12.0),
-            child: ElevatedButton(
+            child: IconButton(
               onPressed: () {},
-              child: Text('Play'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-              ),
+              icon: Icon(Icons.play_arrow),
             ),
           ),
         ],
