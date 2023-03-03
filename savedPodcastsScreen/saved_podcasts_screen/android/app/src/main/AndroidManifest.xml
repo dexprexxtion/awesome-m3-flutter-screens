@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.saved_podcasts_screen">
+    package="com.dexprexxtion.github.example.saved_podcasts_screen">
    <application
         android:label="saved_podcasts_screen"
         android:name="${applicationName}"

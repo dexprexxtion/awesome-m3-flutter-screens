@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.article_screen">
+    package="com.dexprexxtion.github.example.article_screen">
    <application
         android:label="article_screen"
         android:name="${applicationName}"
