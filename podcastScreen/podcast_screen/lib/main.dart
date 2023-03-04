@@ -54,107 +54,96 @@ class _PodcastPageState extends State<PodcastPage> {
           ),
           SliverToBoxAdapter(
             child: Container(
+              padding: const EdgeInsets.all(16.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   _buildPodcastCard(),
-                  SizedBox(
-                    height: 8.0,
-                  ),
                   _buildPodcastCard(),
-                  SizedBox(
-                    height: 8.0,
-                  ),
                   _buildPodcastCard(),
-                  SizedBox(
-                    height: 8.0,
-                  ),
                   _buildPodcastCard(),
-                  SizedBox(
-                    height: 8.0,
-                  ),
                   _buildPodcastCard(),
-                  SizedBox(
-                    height: 8.0,
-                  ),
                   _buildPodcastCard(),
-                  SizedBox(
-                    height: 8.0,
-                  ),
                   _buildPodcastCard(),
-                  SizedBox(
-                    height: 8.0,
-                  ),
                 ],
               ),
             ),
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        icon: Icon(Icons.play_arrow_outlined),
+        onPressed: () {},
+        label: Text('Resume'),
+      ),
     );
   }
 
   Widget _buildPodcastCard() {
-    return Card(
-      elevation: 0.0,
-      color: Theme.of(context).colorScheme.surfaceVariant,
-      surfaceTintColor: Theme.of(context).colorScheme.surfaceTint,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(12.0),
-              bottomLeft: Radius.circular(12.0),
+    return Padding(
+      padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 4.0),
+      child: Card(
+        elevation: 0.0,
+        color: Theme.of(context).colorScheme.surfaceVariant,
+        surfaceTintColor: Theme.of(context).colorScheme.surfaceTint,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12.0),
+                bottomLeft: Radius.circular(12.0),
+              ),
+              child: Image.network(
+                'https://picsum.photos/id/19/120/120',
+                height: 120.0,
+                width: 120.0,
+                fit: BoxFit.cover,
+              ),
             ),
-            child: Image.network(
-              'https://picsum.photos/id/19/120/120',
-              height: 120.0,
-              width: 120.0,
-              fit: BoxFit.cover,
-            ),
-          ),
-          SizedBox(width: 12.0),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Text(
-                    'Lorem Ipsem',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+            SizedBox(width: 12.0),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Text(
+                      'Lorem Ipsem',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                Text(
-                  'Lorem ipsum dolor sit am...',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.grey[600],
+                  SizedBox(
+                    height: 8.0,
                   ),
-                ),
-              ],
+                  Text(
+                    'Lorem ipsum dolor sit am...',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            width: 12.0,
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 70.0, right: 12.0),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.play_arrow),
+            SizedBox(
+              width: 12.0,
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.only(top: 70.0, right: 12.0),
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.play_arrow),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
