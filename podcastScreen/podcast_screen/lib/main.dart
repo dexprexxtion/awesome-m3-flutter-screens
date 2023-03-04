@@ -58,6 +58,22 @@ class _PodcastPageState extends State<PodcastPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  Text(
+                    'People from all walks of life explain their biggest regrets, how the regrets haunt them, and what they would have done differently.',
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  Text(
+                    'by Ketan Chowdhury',
+                    style: TextStyle(
+                      color: Colors.black87,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16.0,
+                  ),
                   _buildPodcastCard(),
                   _buildPodcastCard(),
                   _buildPodcastCard(),
