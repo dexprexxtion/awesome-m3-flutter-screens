@@ -21,6 +21,7 @@ class SavedPodcastsApp extends StatelessWidget {
           fontFamily: 'Roboto'),
       navigatorKey: GlobalContextService.navigatorKey,
       home: SavedPodcastsPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

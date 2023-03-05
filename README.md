@@ -10,30 +10,4 @@ This repository contains a set of beautifully designed UI screens with Material 
 
 ## Designed UIs
 ---
-
-### Article Screens
-<br>
-
-#### Article Screen with AppBar
- <img src="images/demo/articleScreenDemoScreenshot.png" alt="Article Screen with AppBar " />
-
-<br>
-<br>
-
-#### Article Screen with Large TopAppBar
- <img src="images/demo/articleScreenDemoScreenshot_LTAB.png" alt="Article Screen with Large TopAppBar " />
- <img src="images/demo/articleScreenDemoScreenshot_LTAB_Scrolled1.png" alt="Article Screen with Large TopAppBar " />
- <img src="images/demo/articleScreenDemoScreenshot_LTAB_Scrolled2.png" alt="Article Screen with Large TopAppBar " />
- 
-----
-<br>
-<br>
-<br>
-
-
-### Saved Podcasts Screen
-<br>
-<img src="images/demo/savedPodcastsDemoScreenshot.png" alt="Article Screen with Large TopAppBar " />
-<img src="images/demo/savedPodcastsDemoScreenshot_scrolled.png" alt="Article Screen with Large TopAppBar " />
-
----
+<img src="gifs/article_screen1.gif" alt="Article Screen 1" />   <img src="gifs/article_screen2.gif" alt="Article Screen 2" />   <img src="gifs/saved_podcasts_screen.gif" alt="Saved podcasts screen" />    <img src="gifs/podcast_screen.gif" alt="Podcast Screen" />

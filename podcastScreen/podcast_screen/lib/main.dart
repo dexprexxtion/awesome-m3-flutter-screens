@@ -16,6 +16,7 @@ class PodcastScreenApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
           fontFamily: 'Roboto'),
       home: PodcastPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
